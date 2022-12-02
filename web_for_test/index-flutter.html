@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ306F4H4Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QJ306F4H4Y', { 'debug_mode':true });
+    </script>
+</head>
+<body>
+    <style>
+        .btn_container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <div class="btn_container">
+        <button class="button">click this!</button>
+    </div>
+    <script>
+        /**
+        * The following event is sent when the page loads. You could
+        * wrap the event in a function to call the event when certain
+        * events (e.g., a click event) happen on your site.
+        */
+        
+        const handleClick = () => {
+            gtag('event', 'Web_button_click', {
+            'app_name': 'myAppName',
+            'screen_name': 'Home'
+            });
+            console.log('button 클릭됨');
+            alert('Webbutton 클릭됨');
+        }
+
+        const btn = document.querySelector('.button');
+        btn.addEventListener('click', handleClick);
+      </script> 
+<!--     <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+    
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          const firebaseConfig = {
+            apiKey: "AIzaSyAL3Q8_emP_S_6wK7f71cIra8r0IryJjyA",
+            authDomain: "park-flutter-app-test.firebaseapp.com",
+            projectId: "park-flutter-app-test",
+            storageBucket: "park-flutter-app-test.appspot.com",
+            messagingSenderId: "307971430786",
+            appId: "1:307971430786:web:2c9fc7baacf5ae12bed79b",
+            measurementId: "G-QJ306F4H4Y"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        const handleClick = () => {
+            logEvent(analytics, 'webBtnIsClicked', { name: 'webBtnIsClicked_name'});
+            console.log('button 클릭됨');
+            alert('Webbutton 클릭됨');
+        }
+
+        const btn = document.querySelector('.button');
+        btn.addEventListener('click', handleClick);
+    </script> -->
+</body>
+</html>
